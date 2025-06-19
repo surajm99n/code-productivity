@@ -4,26 +4,26 @@ A comprehensive collection of agentic rules and workflows designed to enhance AI
 
 ## Quick Start
 
-Add rules to any project using the `add-rules` script:
+Add rules to any project using the `add-rules.sh` script:
 
 ```bash
 # Interactive selection (default)
-./add-rules
+./add-rules.sh
 
 # Add specific rules
-./add-rules -r clean,commit,implement-task
+./add-rules.sh -r clean,commit,implement-task
 
 # Add all rules
-./add-rules -a
+./add-rules.sh -a
 
 # List available rules  
-./add-rules -l
+./add-rules.sh -l
 
 # Different output formats
-./add-rules -f cursor      # .cursor/rules/ (default)
-./add-rules -f copilot     # .github/copilot-instructions.md
-./add-rules -f claude      # agentic-rules/ + @import in CLAUDE.md
-./add-rules -f plain       # agentic-rules/
+./add-rules.sh -f cursor      # .cursor/rules/ (default)
+./add-rules.sh -f copilot     # .github/copilot-instructions.md
+./add-rules.sh -f claude      # agentic-rules/ + @import in CLAUDE.md
+./add-rules.sh -f plain       # agentic-rules/
 ```
 
 ## Available Rules
@@ -74,7 +74,7 @@ code-productivity/
 │   ├── single-task-focus.mdc      # Single task focus
 │   ├── sustainable-dev.mdc        # Sustainable development
 │   └── update-docs.mdc     # Documentation updates
-├── add-rules*              # Rule deployment script
+├── add-rules.sh*           # Rule deployment script
 ├── CLAUDE.md              # Claude Code integration file
 └── README.md              # This file
 ```
