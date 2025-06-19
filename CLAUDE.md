@@ -39,4 +39,5 @@ The following rules are imported to enhance AI assistant productivity:
 @import agentic-rules/create-docs.mdc
 @import agentic-rules/five.mdc
 @import agentic-rules/implement-task.mdc
+@import agentic-rules/no-claude-footer.mdc
 @import agentic-rules/update-docs.mdc

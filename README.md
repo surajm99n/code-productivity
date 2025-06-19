@@ -48,6 +48,9 @@ Add rules to any project using the `add-rules.sh` script:
 ### Language-Specific Rules
 - **python-uv** - Modern Python package management using `uv` instead of `pip`
 
+### Git & Version Control Rules
+- **no-claude-footer** - Clean git commits without AI attribution footers
+
 ## Output Formats
 
 The toolkit supports multiple output formats to integrate with different AI coding assistants:
@@ -70,6 +73,7 @@ code-productivity/
 │   ├── five.mdc            # Five Whys analysis
 │   ├── implement-task.mdc  # Task implementation workflow
 │   ├── minimum-viable-change.mdc  # Minimal effective changes
+│   ├── no-claude-footer.mdc       # Clean git commits without AI attribution
 │   ├── python-uv.mdc       # Python uv package manager
 │   ├── single-task-focus.mdc      # Single task focus
 │   ├── sustainable-dev.mdc        # Sustainable development
