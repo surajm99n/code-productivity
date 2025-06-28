@@ -1,0 +1,118 @@
+---
+applyTo: '**'
+---
+
+# Test-Driven Development (TDD)
+
+## Core Principle
+Follow strict Test-Driven Development methodology: write tests first, watch them fail, then implement functionality to make them pass.
+
+## TDD Workflow
+
+### 1. Red Phase - Write Failing Tests
+- Write tests BEFORE any implementation code
+- Tests should fail initially due to missing functionality
+- Run tests to verify they fail for the right reasons
+- Never write implementation code until tests are in place
+
+### 2. Green Phase - Minimal Implementation
+- Write the minimum code needed to make tests pass
+- Focus on functionality, not optimization
+- All tests should pass after implementation
+
+### 3. Refactor Phase - Improve Code Quality
+- Refactor implementation while keeping tests green
+- Improve code structure, readability, and performance
+- Tests must continue to pass throughout refactoring
+
+## Key Rules
+
+### Before Writing ANY Code:
+1. **Write comprehensive tests first** - Cover expected functionality, edge cases, and error conditions
+2. **Run tests to ensure they fail** - Verify tests fail for the correct reasons (missing imports, functions, etc.)
+3. **Never write mock implementations** - Don't create placeholder or stub implementations
+4. **Test real behavior** - Tests should verify actual functionality, not mocked responses
+
+### Implementation Guidelines:
+- Write minimal code to pass tests
+- Implement one test case at a time
+- Run tests frequently during implementation
+- Only add features that have corresponding tests
+
+### What NOT to Do:
+❌ **Bad**: Writing implementation code before tests
+❌ **Bad**: Creating mock/stub implementations that always return dummy data
+❌ **Bad**: Writing tests after implementation is complete
+❌ **Bad**: Skipping the "fail" phase of TDD cycle
+
+### What TO Do:
+✅ **Good**: Write test for expected behavior first
+✅ **Good**: Run test and verify it fails due to missing functionality
+✅ **Good**: Implement minimal code to make test pass
+✅ **Good**: Refactor while keeping tests green
+
+## Examples
+
+### TDD Workflow Example:
+
+```python
+# Step 1: Write failing test
+def test_user_registration():
+    user = User.create("john@example.com", "password123")
+    assert user.email == "john@example.com"
+    assert user.is_active == True
+    
+# Step 2: Run test - SHOULD FAIL (User class doesn't exist)
+# Step 3: Implement minimal User class to pass test
+# Step 4: Run test - SHOULD PASS
+# Step 5: Refactor if needed while keeping test green
+```
+
+### Integration with Task Development:
+
+For each task/subtask:
+
+1. **Analysis Phase**: Understand requirements
+2. **Test Design Phase**: Write comprehensive test cases
+3. **Red Phase**: Run tests to verify they fail
+4. **Implementation Phase**: Write minimal code to pass tests
+5. **Green Phase**: Verify all tests pass
+6. **Refactor Phase**: Improve code quality
+
+## Test Categories to Include:
+
+### Unit Tests:
+- Individual function/method behavior
+- Edge cases and boundary conditions
+- Error handling and exceptions
+- Input validation
+
+### Integration Tests:
+- Component interactions
+- End-to-end workflows
+- Real data processing
+- External dependency integration
+
+### Property-Based Tests:
+- Use hypothesis or similar for complex data scenarios
+- Test invariants and properties
+- Generate diverse test inputs
+
+## Quality Gates:
+
+Before marking any task complete:
+1. All tests must be written first
+2. Tests must have failed initially
+3. All tests must pass after implementation
+4. Code coverage should be comprehensive
+5. Tests should use real functionality, not mocks
+
+## Benefits:
+
+- **Higher Code Quality**: Tests drive good design decisions
+- **Better Requirements Understanding**: Writing tests clarifies expected behavior
+- **Regression Prevention**: Comprehensive test suite catches breaking changes
+- **Documentation**: Tests serve as living documentation of functionality
+- **Confidence**: High test coverage enables fearless refactoring
+
+This rule applies to all coding tasks and should be followed consistently across the entire project.

@@ -41,9 +41,11 @@ Add rules to any project using the `add-rules.sh` script:
 
 ### Analysis & Development Philosophy Rules
 - **five** - Five Whys root cause analysis technique for problem-solving
+- **minimal-dependencies** - Use minimum dependencies while optimizing for superior technical choices
 - **minimum-viable-change** - Implement the smallest effective changes to solve problems
 - **single-task-focus** - Maintain focus on one task at a time for better outcomes
 - **sustainable-dev** - Sustainable development practices for long-term maintainability
+- **test-driven-development** - Follow strict TDD methodology: write tests first, then implement functionality
 
 ### Language-Specific Rules
 - **python-uv** - Modern Python package management using `uv` instead of `pip`
@@ -72,11 +74,13 @@ code-productivity/
 │   ├── create-docs.mdc     # Documentation generation
 │   ├── five.mdc            # Five Whys analysis
 │   ├── implement-task.mdc  # Task implementation workflow
+│   ├── minimal-dependencies.mdc   # Use minimum dependencies with superior choices
 │   ├── minimum-viable-change.mdc  # Minimal effective changes
 │   ├── no-claude-footer.mdc       # Clean git commits without AI attribution
 │   ├── python-uv.mdc       # Python uv package manager
 │   ├── single-task-focus.mdc      # Single task focus
 │   ├── sustainable-dev.mdc        # Sustainable development
+│   ├── test-driven-development.mdc # Strict TDD methodology
 │   └── update-docs.mdc     # Documentation updates
 ├── add-rules.sh*           # Rule deployment script
 ├── CLAUDE.md              # Claude Code integration file

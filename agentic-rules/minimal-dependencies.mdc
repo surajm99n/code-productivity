@@ -1,0 +1,54 @@
+---
+applyTo: '**'
+---
+
+# Minimal Dependencies with Superior Choices
+
+## Core Principle
+Use the minimum amount of dependencies needed while optimizing for superior technical choices. Avoid premature optimization and dependency bloat.
+
+## Decision Framework
+
+### 1. Prefer Standard Library First
+- Use stdlib when functionality is adequate
+- Examples: `pathlib` over `os.path`, `json` over `orjson`, `logging` over `structlog`
+- Only add external deps when stdlib is insufficient or significantly inferior
+
+### 2. Leverage Existing Project Dependencies
+- Check what's already installed before adding new dependencies
+- Reuse existing libraries across multiple features
+- Examples: Use `pydantic` for all data validation, `requests` for all HTTP calls
+
+### 3. Essential vs Optimization Dependencies
+- **Essential**: No reasonable stdlib alternative exists
+  - Example: `python-frontmatter` for YAML frontmatter parsing
+- **Optimization**: Marginal performance/convenience gains
+  - Example: `orjson` vs `json`, `pendulum` vs `datetime`
+- **Rule**: Add essential, defer optimization until proven necessary
+
+### 4. Quality Gate Questions
+Before adding any dependency, ask:
+1. Is there a stdlib alternative that's 80% as good?
+2. Is this dependency already in the project?
+3. Does this solve a real problem or hypothetical future need?
+4. Can we implement a simple version ourselves in <50 lines?
+
+### 5. Acceptable Trade-offs
+- Choose slightly more verbose stdlib code over new dependencies
+- Accept adequate performance over optimal performance for MVP
+- Prioritize maintainability and simplicity over feature richness
+
+## Examples Applied
+
+**Good**: `pathlib.Path.rglob("*.md")` instead of adding `glob2` package
+**Good**: `json.dumps()` instead of adding `orjson` for "faster" serialization  
+**Good**: Adding `python-frontmatter` because no stdlib YAML frontmatter parser exists
+**Bad**: Adding `arrow` when `datetime` handles the use case adequately
+**Bad**: Adding `structlog` when basic `logging` meets requirements
+
+## Exception Cases
+- Security: Always use well-maintained security libraries
+- Core domain logic: Add specialized libraries for core functionality
+- Proven bottlenecks: Add performance libraries after measuring real impact
+
+This rule applies to all coding agents and should be followed consistently across the project.

@@ -28,7 +28,11 @@ declare -A RULES_DESC=(
     ["commit-fast"]="Streamlined commit process with automatic message selection"
     ["context-prime"]="Load comprehensive project context for AI assistants"
     ["create-docs"]="Generate comprehensive documentation for components"
+    ["five"]="Five Whys root cause analysis technique for problem-solving"
     ["implement-task"]="Methodical task implementation with careful planning"
+    ["minimal-dependencies"]="Use minimum dependencies with superior technical choices"
+    ["no-claude-footer"]="Clean git commits without AI attribution footers"
+    ["test-driven-development"]="Follow strict TDD methodology: write tests first, then implement"
     ["update-docs"]="Create LLM-optimized documentation with file references"
 )
 
